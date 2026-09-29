@@ -1,0 +1,37 @@
+@font-face{font-family:Paperlogy;src:url('../assets/fonts/Paperlogy-4Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Paperlogy;src:url('../assets/fonts/Paperlogy-5Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:Paperlogy;src:url('../assets/fonts/Paperlogy-6SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:Paperlogy;src:url('../assets/fonts/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+:root{--font-body:Paperlogy,sans-serif;--font-mono:Paperlogy,sans-serif}
+body,button,input,textarea,select{font-family:Paperlogy,sans-serif}
+.builder-modal,.builder-modal.is-reviewing{display:grid;grid-template-rows:minmax(0,1fr)}
+.workflow-line{grid-column:1/-1;grid-row:1;display:flex;list-style:none;gap:0;margin:0;padding:22px 30px;background:#18181b;border-bottom:1px solid #303036}
+.workflow-line li{display:flex;align-items:center;flex:1;gap:10px;min-width:0;color:#aaaab4;font-size:14px}
+.workflow-line li:not(:last-child)::after{content:'';height:2px;flex:1;margin:0 16px 0 6px;background:#36363f}
+.workflow-line b{display:grid;place-items:center;flex-shrink:0;width:30px;height:30px;border:1px solid #555560;border-radius:50%;font-size:12px}
+.workflow-line [aria-current]{color:#fff;font-weight:600}
+.workflow-line [aria-current] b,.workflow-line .is-complete b{background:#ee4664;border-color:#ee4664;color:white}
+.workflow-line .is-complete::after{background:#ee4664!important}
+.builder-modal>.builder-preview,.builder-modal.is-reviewing>.builder-preview{display:grid;grid-column:1;grid-row:1;min-height:0;max-height:none}
+.builder-modal>.builder-panel{grid-column:2;grid-row:1;grid-template-rows:auto minmax(0,1fr) auto}
+.builder-panel>.builder-progress{display:none}
+.builder-modal.is-reviewing>.builder-panel{display:none}
+.builder-modal>.review-shell{grid-column:2;grid-row:2;display:block;min-width:0;height:100%;border-left:1px solid #303036}
+.builder-modal>.review-shell[hidden]{display:none}
+.builder-modal .review-sidebar{display:none}
+.builder-modal .review-workspace{height:100%}
+.builder-modal .story-cut-grid{grid-template-columns:1fr}
+.builder-modal .concept-card dl{grid-template-columns:1fr}
+.builder-modal .concept-card footer,.builder-modal .storyboard-board>footer{flex-wrap:wrap}
+.preview-vignette,.preview-label{pointer-events:none}
+@media(max-width:900px){
+ .builder-modal,.builder-modal.is-reviewing{grid-template-rows:auto minmax(0,1fr)}
+ .builder-modal>.builder-preview,.builder-modal.is-reviewing>.builder-preview{grid-column:1;grid-row:1;padding:10px;max-height:22vh;min-height:0}
+ .builder-media-frame{width:auto;height:min(18vh,160px);max-width:100%}
+ .builder-modal>.builder-panel,.builder-modal>.review-shell{grid-column:1;grid-row:2}
+ .preview-label{display:none}
+ .workflow-line{padding:14px}
+ .workflow-line li{font-size:12px;gap:6px}
+ .workflow-line li:not(:last-child)::after{margin:0 8px}
+ .workflow-line b{width:24px;height:24px}
+}

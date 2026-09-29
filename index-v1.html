@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="제품 사진 한 장으로 TVC와 쇼츠 광고를 만드는 AI 영상 프리셋 스튜디오" />
+  <title>PRESET STUDIO — 촬영 없이, 광고가 됩니다</title>
+  <link rel="stylesheet" href="./styles/nocturne.css" />
+  <link rel="stylesheet" href="./styles/landing-v1.css" />
+</head>
+<body>
+  <header class="home-nav">
+    <a class="home-brand" href="#top">PRESET STUDIO</a>
+    <nav aria-label="주요 메뉴">
+      <a href="#tvc">TVC 프리셋</a><a href="#shorts">쇼츠 프리셋</a><a href="#cases">사례</a><a href="#pricing">가격</a>
+    </nav>
+    <div class="home-actions"><a class="btn btn-secondary" href="#">로그인</a><a class="btn btn-primary" href="./studio.html">무료로 시작</a></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img src="./assets/tvc-presets/beauty/luminous-serum.png" alt="" />
+      <div class="hero-scrim"></div>
+      <div class="hero-copy">
+        <p class="kicker">TVC PRESET · SHORTS PRESET</p>
+        <h1>촬영 없이,<br />광고가 됩니다.</h1>
+        <p class="english">Ad-film texture, straight out of a preset.</p>
+        <p class="hero-body">업종만 고르면 연출·카메라·조명·컷·자막이 이미 짜여 있습니다. 제품 사진 한 장과 한 줄이면 됩니다.</p>
+      </div>
+      <div class="hero-cta"><a class="btn btn-primary" href="#presets">프리셋 둘러보기 →</a></div>
+    </section>
+
+    <section class="content-section preset-section" id="presets">
+      <div class="section-head">
+        <div><p class="kicker">PRESET RAILS</p><h2>업종을 고르면 연출이 정해집니다</h2><p class="english">Pick your business — the direction is already written.</p></div>
+        <a class="btn btn-ghost" href="#tvc">전체 프리셋 →</a>
+      </div>
+      <div class="industry-chips" id="industryChips" aria-label="업종 필터"></div>
+      <div class="rail-block" id="tvc"><div class="rail-title"><h3>TVC 프리셋</h3><span>16:9 · 15–20초</span></div><div class="preset-rail" id="tvcRail"></div></div>
+      <div class="rail-block" id="shorts"><div class="rail-title"><h3>쇼츠 프리셋</h3><span>9:16 · 9–12초</span></div><div class="preset-rail shorts" id="shortsRail"></div></div>
+    </section>
+
+    <section class="steps" aria-label="사용 방법">
+      <article><span>01</span><h3>업종과 프리셋 고르기</h3><p>카페·뷰티·패션·리빙 등 업종을 고르면 그 업종에서 잘 팔린 연출만 남습니다.</p></article>
+      <article><span>02</span><h3>사진과 한 줄 넣기</h3><p>제품 사진 한 장, 매장 이름, 하고 싶은 말 한 줄. 나레이션과 자막은 자동으로 붙습니다.</p></article>
+      <article><span>03</span><h3>받아서 바로 올리기</h3><p>16:9와 9:16을 함께 내보냅니다. 인스타·유튜브·네이버 규격에 맞춰 바로 업로드.</p></article>
+    </section>
+
+    <section class="content-section" id="cases">
+      <div class="section-head"><div><p class="kicker">IN THE WILD</p><h2>이렇게 쓰고 있습니다</h2></div></div>
+      <div id="caseList" class="case-list"></div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="section-head"><div><p class="kicker">PRICING</p><h2>쓰는 만큼만</h2></div><span class="tag tag-neutral">금액은 가안</span></div>
+      <div id="planGrid" class="plan-grid"></div>
+    </section>
+
+    <section class="content-section faq-section">
+      <div><p class="kicker">FAQ</p><h2>자주 묻는 질문</h2></div>
+      <div id="faqList" class="faq-list"></div>
+    </section>
+
+    <section class="bottom-cta">
+      <div><h2>첫 광고는 무료로.</h2><p class="english">Free to start. No card, no crew.</p></div>
+      <div><a class="btn btn-primary" href="./studio.html">무료로 시작하기</a><a class="btn btn-secondary" href="mailto:contact@example.com">상담 요청</a></div>
+    </section>
+  </main>
+  <script type="module" src="./src/landing-v1.js"></script>
+</body>
+</html>
+

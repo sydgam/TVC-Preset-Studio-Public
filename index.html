@@ -1,0 +1,192 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="제품 사진 한 장으로 TVC와 쇼츠 광고를 만드는 AI 영상 프리셋 스튜디오" />
+  <title>PRESET STUDIO — 촬영 없이, 광고가 됩니다</title>
+  <link rel="stylesheet" href="./styles/nocturne.css" />
+  <link rel="stylesheet" href="./styles/landing.css" />
+  <link rel="stylesheet" href="./styles/workflow.css" />
+</head>
+<body>
+  <header class="home-nav">
+    <a class="home-brand" href="#top">PRESET STUDIO</a>
+    <nav aria-label="주요 메뉴">
+      <a href="#tvc">TVC 프리셋</a><a href="#shorts">쇼츠 프리셋</a><a href="#cases">사례</a><a href="#pricing">가격</a>
+    </nav>
+    <div class="home-actions"><a class="btn btn-secondary" href="#">로그인</a><button class="btn btn-primary js-open-builder" type="button">무료로 시작</button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img src="./assets/tvc-presets/beauty/luminous-serum.png" alt="" />
+      <div class="hero-scrim"></div>
+      <div class="hero-copy">
+        <p class="kicker">TVC PRESET · SHORTS PRESET</p>
+        <h1>촬영 없이,<br />광고가 됩니다.</h1>
+        <p class="english">Ad-film texture, straight out of a preset.</p>
+        <p class="hero-body">업종만 고르면 연출·카메라·조명·컷·자막이 이미 짜여 있습니다. 제품 사진 한 장과 한 줄이면 됩니다.</p>
+      </div>
+      <div class="hero-cta"><a class="btn btn-primary" href="#presets">프리셋 둘러보기 →</a></div>
+    </section>
+
+    <section class="content-section preset-section" id="presets">
+      <div class="section-head">
+        <div><p class="kicker">PRESET RAILS</p><h2>업종을 고르면 연출이 정해집니다</h2><p class="english">Pick your business — the direction is already written.</p></div>
+        <a class="btn btn-ghost" href="#tvc">전체 프리셋 →</a>
+      </div>
+      <div class="industry-chips" id="industryChips" aria-label="업종 필터"></div>
+      <div class="rail-block" id="tvc"><div class="rail-title"><h3>TVC 프리셋</h3><span>16:9 · 5–15초</span></div><div class="preset-rail" id="tvcRail"></div></div>
+      <div class="rail-block" id="shorts"><div class="rail-title"><h3>쇼츠 프리셋</h3><span>9:16 · 9–12초</span></div><div class="preset-rail shorts" id="shortsRail"></div></div>
+    </section>
+
+    <section class="steps" aria-label="사용 방법">
+      <article><span>01</span><h3>업종과 프리셋 고르기</h3><p>카페·뷰티·패션·리빙 등 업종을 고르면 그 업종에서 잘 팔린 연출만 남습니다.</p></article>
+      <article><span>02</span><h3>사진과 한 줄 넣기</h3><p>제품 사진 한 장, 매장 이름, 하고 싶은 말 한 줄. 나레이션과 자막은 자동으로 붙습니다.</p></article>
+      <article><span>03</span><h3>받아서 바로 올리기</h3><p>16:9와 9:16을 함께 내보냅니다. 인스타·유튜브·네이버 규격에 맞춰 바로 업로드.</p></article>
+    </section>
+
+    <section class="content-section" id="cases">
+      <div class="section-head"><div><p class="kicker">IN THE WILD</p><h2>이렇게 쓰고 있습니다</h2></div></div>
+      <div id="caseList" class="case-list"></div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="section-head"><div><p class="kicker">PRICING</p><h2>쓰는 만큼만</h2></div><span class="tag tag-neutral">금액은 가안</span></div>
+      <div id="planGrid" class="plan-grid"></div>
+    </section>
+
+    <section class="content-section faq-section">
+      <div><p class="kicker">FAQ</p><h2>자주 묻는 질문</h2></div>
+      <div id="faqList" class="faq-list"></div>
+    </section>
+
+    <section class="bottom-cta">
+      <div><h2>첫 광고는 무료로.</h2><p class="english">Free to start. No card, no crew.</p></div>
+      <div><button class="btn btn-primary js-open-builder" type="button">무료로 시작하기</button><a class="btn btn-secondary" href="mailto:contact@example.com">상담 요청</a></div>
+    </section>
+  </main>
+  <div class="builder-shell" id="builderShell" hidden>
+    <button class="builder-backdrop" type="button" aria-label="제작창 닫기"></button>
+    <section class="builder-modal" role="dialog" aria-modal="true" aria-labelledby="builderTitle">
+      <div class="builder-preview">
+        <div class="builder-media-frame">
+          <img id="builderPreviewImage" src="./assets/tvc-presets/beauty/luminous-serum.png" alt="선택한 프리셋 미리보기" />
+          <video id="builderPreviewVideo" controls muted loop playsinline hidden aria-label="선택한 프리셋 영상 미리보기"></video>
+        </div>
+        <div class="preview-vignette"></div>
+        <div class="preview-label"><span>16:9 PREVIEW</span><strong id="previewStyleName">변경하지 않음</strong></div>
+      </div>
+      <form class="builder-panel" id="builderForm">
+        <header class="builder-header"><div><p>START TVC STUDIO · V3</p><h2 id="builderTitle">광고 영상 만들기</h2></div><button class="builder-close" type="button" aria-label="제작창 닫기">×</button></header>
+        <div class="builder-scroll">
+          <section class="builder-field">
+            <div class="field-title"><div><b>01</b><h3>제품 이미지 업로드</h3><em>선택 가능 · 최대 5장</em></div><span id="productCount">0/5</span></div>
+            <label class="upload-zone" for="productImages"><span class="upload-icon">＋</span><strong>제품 사진 추가</strong><small>여러 각도의 사진을 올리면 결과가 더 정확해집니다. 이미지 없이도 진행할 수 있습니다.</small></label>
+            <input id="productImages" type="file" accept="image/*" multiple hidden /><div class="upload-previews" id="productPreviews"></div>
+          </section>
+          <section class="builder-field">
+            <div class="field-title"><div><b>02</b><h3>모델 선택</h3><em>선택 가능</em></div><button class="field-action" id="openModels" type="button">모델 고르기 →</button></div>
+            <div class="selection-summary" id="modelSummary">썸네일 모델을 사용합니다.</div>
+            <div class="upload-previews" id="modelPreview"></div>
+          </section>
+          <section class="builder-field">
+            <div class="field-title"><div><b>03</b><h3>영상 비율</h3></div></div>
+            <div class="choice-row ratio-row">
+              <label><input type="radio" name="ratio" value="16:9" checked /><span><i class="ratio-icon landscape"></i><strong>가로</strong><small>16:9 · TVC</small></span></label>
+              <label><input type="radio" name="ratio" value="9:16" /><span><i class="ratio-icon portrait"></i><strong>세로</strong><small>9:16 · 쇼츠</small></span></label>
+            </div>
+          </section>
+          <section class="builder-field">
+            <div class="field-title"><div><b>04</b><h3>영상 길이</h3><em>5–15초</em></div></div>
+            <label class="duration-select" for="videoDuration"><select id="videoDuration" aria-label="영상 길이">
+              <option value="5">5초</option><option value="6">6초</option><option value="7">7초</option><option value="8">8초</option><option value="9">9초</option><option value="10" selected>10초</option><option value="11">11초</option><option value="12">12초</option><option value="13">13초</option><option value="14">14초</option><option value="15">15초</option>
+            </select><span>초 단위로 선택</span></label>
+          </section>
+          <section class="builder-field">
+            <div class="field-title"><div><b>05</b><h3>나레이션</h3><em>선택 가능</em></div></div>
+            <label class="link-input"><span>↗</span><input type="url" id="productUrl" placeholder="제품 홈페이지 또는 상세페이지 링크 붙여넣기" /></label>
+            <p class="field-help">제품 정보를 참고해 영상에 어울리는 설명을 구성합니다.</p>
+          </section>
+          <section class="builder-field">
+            <div class="field-title"><div><b>06</b><h3>영상 스타일</h3><em>1개 선택</em></div></div>
+            <div class="style-grid">
+              <label><input type="radio" name="videoStyle" value="변경하지 않음" checked /><span><img src="./assets/tvc-presets/beauty/luminous-serum.png" alt="" /><strong>변경하지 않음</strong><small>선택한 프리셋 유지</small></span></label>
+              <label><input type="radio" name="videoStyle" value="로맨틱 스타일" /><span><img src="./assets/tvc-presets/food/fresh-table.png" alt="" /><strong>로맨틱</strong><small>부드러운 빛과 감성</small></span></label>
+              <label><input type="radio" name="videoStyle" value="코믹 스타일" /><span><img src="./assets/tvc-presets/product/tech-reveal.png" alt="" /><strong>코믹</strong><small>경쾌한 템포와 반전</small></span></label>
+            </div>
+          </section>
+          <section class="builder-field">
+            <div class="field-title"><div><b>07</b><h3>로고 삽입</h3><em>선택 가능</em></div><span id="logoName">미선택</span></div>
+            <label class="logo-upload" for="logoImage"><span>＋</span>로고 파일 선택<small>PNG, JPG, WEBP</small></label><input id="logoImage" type="file" accept="image/png,image/jpeg,image/webp" hidden />
+            <div class="upload-previews" id="logoPreview"></div>
+          </section>
+          <section class="builder-field">
+            <div class="field-title"><div><b>08</b><h3>프롬프트</h3></div><button class="prompt-expand-toggle" id="promptExpansionToggle" type="button" aria-pressed="true"><span>ON</span> AI 확장 켜짐</button></div>
+            <label class="prompt-input" for="videoPrompt"><textarea id="videoPrompt" rows="4" aria-label="영상 제작 프롬프트" placeholder="업로드한 제품으로 TVC 광고 영상을 고급스럽게 만들어줘."></textarea></label>
+            <p class="field-help">짧고 쉽게 적어도 AI가 영상 생성에 필요한 장면·카메라·조명 지침으로 확장합니다.</p>
+          </section>
+        </div>
+        <footer class="builder-footer"><button class="btn btn-primary" type="submit">영상 만들기 <span>→</span></button></footer>
+      </form>
+    </section>
+  </div>
+  <div class="model-shell" id="modelShell" hidden>
+    <button class="model-backdrop" type="button" aria-label="모델 선택 닫기"></button>
+    <section class="model-picker" role="dialog" aria-modal="true" aria-labelledby="modelTitle">
+      <header><div><p>CAST LIBRARY</p><h2 id="modelTitle">출연 모델 선택</h2></div><button type="button" class="model-close" aria-label="모델 선택 닫기">×</button></header>
+      <div class="gender-tabs" role="tablist"><button type="button" role="tab" aria-selected="true" data-gender="female">여성</button><button type="button" role="tab" aria-selected="false" data-gender="male">남성</button></div>
+      <div class="model-grid" id="modelGrid"></div>
+      <footer><button type="button" class="btn btn-secondary" id="clearModel">썸네일 모델 사용</button><button type="button" class="btn btn-primary" id="confirmModel">선택 완료</button></footer>
+    </section>
+  </div>
+  <div class="prompt-review-shell" id="promptReviewShell" hidden>
+    <button class="prompt-review-backdrop" type="button" aria-label="확장 프롬프트 확인 닫기"></button>
+    <section class="prompt-review-dialog" role="dialog" aria-modal="true" aria-labelledby="promptReviewTitle">
+      <header><h2 id="promptReviewTitle">확장 결과 <small>테스트용</small></h2><button class="prompt-review-close" type="button" aria-label="확장 결과 닫기">×</button></header>
+      <div class="prompt-review-body">
+        <section class="expanded-prompt-section"><textarea id="expandedPromptText" rows="15" aria-label="AI가 확장한 영상 프롬프트" readonly></textarea></section>
+        <section class="test-quality-section"><h3>화질 선택</h3><div class="choice-row quality-row">
+          <label><input type="radio" name="reviewQuality" value="720p" checked /><span><strong>720p</strong><small>저화질 · 빠른 확인</small></span></label>
+          <label><input type="radio" name="reviewQuality" value="1080p" /><span><strong>1080p</strong><small>고화질 · 최종 영상</small></span></label>
+        </div></section>
+        <p class="prompt-review-status" id="promptReviewStatus" role="status" aria-live="polite"></p>
+        <div class="generation-result" id="generationResult" hidden><video id="generationResultVideo" controls playsinline></video><a id="generationResultLink" target="_blank" rel="noopener">완성 영상 열기 · 저장</a></div>
+      </div>
+      <footer><button class="btn btn-secondary" id="backToBuilder" type="button">닫기</button><button class="btn btn-primary" id="continueToGeneration" type="button" disabled>선택한 화질로 계속</button></footer>
+    </section>
+  </div>
+  <div class="review-shell" id="reviewShell" hidden>
+    <aside class="review-sidebar">
+      <p class="review-brand">✣ AD 비디오 에이전트</p>
+      <h2 id="reviewStageTitle">컨셉 검토 중</h2>
+      <p id="reviewStageDescription">선택한 자료를 바탕으로 광고 컨셉을 준비했습니다.</p>
+      <article class="review-summary">
+        <img id="reviewSummaryImage" src="./assets/tvc-presets/beauty/luminous-serum.png" alt="선택한 프리셋" />
+        <div><small>선택 프리셋</small><strong id="reviewPresetName">광고 프리셋</strong><span id="reviewPresetMeta">16:9 · 변경하지 않음</span></div>
+      </article>
+      <div class="review-progress-card"><div><span>✦ 현재 진행</span><strong id="reviewProgressText">컨셉 확인</strong></div><div class="review-progress-track"><span id="reviewProgressBar"></span></div></div>
+    </aside>
+    <section class="review-workspace" role="dialog" aria-modal="true" aria-labelledby="reviewStageTitle">
+      <header class="review-header"><div><p>▤ 스토리보드 협의</p><span>대사, 나레이션, 전개와 엔딩까지 검토한 뒤 영상 생성을 시작합니다.</span></div><button class="review-close" type="button" aria-label="스토리보드 검토 닫기">×</button></header>
+      <div class="review-chat" id="reviewChat" aria-live="polite"></div>
+      <form class="review-composer" id="reviewComposer"><textarea id="reviewMessage" rows="3" placeholder="예: 제품을 더 빨리 보여줘 / 엔딩 문구를 바꿔줘"></textarea><div><small>요청을 보내면 현재 컨셉 또는 스토리보드에 반영됩니다.</small><button type="submit">보내기 ↗</button></div></form>
+    </section>
+  </div>
+  <div class="generation-shell" id="generationShell" hidden>
+    <button class="generation-backdrop" type="button" aria-label="영상 생성 확인 닫기"></button>
+    <section class="generation-dialog" role="alertdialog" aria-modal="true" aria-labelledby="generationTitle">
+      <p>✣ 시작 전 확인</p><h2 id="generationTitle">영상 생성을 시작할까요?</h2>
+      <p class="generation-intro">입력한 설정과 프롬프트로 영상 생성을 시작하면 AI 작업이 바로 진행됩니다. 시작 후에는 중간 중지나 비용 취소가 어려울 수 있습니다.</p>
+      <div class="generation-cost"><div><strong id="generationQuality">720P 저화질 영상 생성</strong><span>대략 5–10분 정도 소요됩니다</span></div><div class="generation-warning">AI 영상은 확률적으로 생성되어 프리셋·제품·모델 이미지를 동일하게 사용해도 인물, 손, 글자, 제품 형태, 움직임이 예상과 다르게 나올 수 있습니다. 이는 환불 사유가 아니며 필요하면 재생성 또는 편집으로 보정해야 합니다.</div><b>WaveSpeed 실제 사용료가 발생합니다.</b></div>
+      <footer><button class="btn btn-secondary" id="cancelGeneration" type="button">아니요</button><button class="btn btn-primary" id="confirmGeneration" type="button">동의하고 시작 <small>유료 API</small></button></footer>
+    </section>
+  </div>  <script type="module" src="./src/landing.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="_ds/nocturne-c11b6b52-2c5a-498a-b776-58c41e0afb7b/styles.css">
+<script src="_ds/nocturne-c11b6b52-2c5a-498a-b776-58c41e0afb7b/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: "Inter", "Noto Sans KR", system-ui, sans-serif; }
+  h1, h2, h3, h4 { font-family: "Inter", "Noto Sans KR", system-ui, sans-serif; }
+  a { color: var(--color-accent); text-decoration: none; }
+  a:hover { color: var(--color-accent-300); }
+  ::-webkit-scrollbar { height: 8px; width: 8px; }
+  ::-webkit-scrollbar-thumb { background: var(--color-neutral-800); border-radius: 8px; }
+</style>
+</helmet>
+
+<section style="display:flex;flex-direction:column;gap:28px;padding:40px 48px 72px">
+  <div style="display:flex;align-items:baseline;gap:16px">
+    <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">Turn 2</span>
+    <span style="font-size:14px;color:var(--color-neutral-400)">1b 확정안 — 카피 조이고, 레일에 업종 필터·호버 미리보기, 가격·FAQ 추가. <a href="#2a">2a</a></span>
+  </div>
+
+  <div id="2a" style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-flex;align-items:center;padding:3px 10px;border-radius:var(--radius-sm);border:1px solid var(--color-accent);color:var(--color-accent);font-size:11px;letter-spacing:.12em">2A</span>
+      <span style="font-size:13px;color:var(--color-neutral-400)">PRESET STUDIO — 쇼케이스 우선 구조의 2차 안</span>
+    </div>
+
+    <div style="width:1240px;background:var(--color-bg);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)">
+
+      <div style="position:relative;height:660px">
+        <div style="position:absolute;inset:0">
+          <image-slot id="ps-2a-hero" shape="rect" placeholder="전면 히어로 영상 스틸 (검정 배경 소재 권장)"></image-slot>
+        </div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,var(--color-bg) 0%,color-mix(in srgb,var(--color-bg) 60%,transparent) 48%,transparent 88%);pointer-events:none"></div>
+        <div class="nav" style="position:relative;padding:22px 56px">
+          <span class="nav-brand" style="letter-spacing:-0.01em">{{ brandName }}</span>
+          <a href="#2a">TVC 프리셋</a>
+          <a href="#2a">쇼츠 프리셋</a>
+          <a href="#2a">사례</a>
+          <a href="#2a">가격</a>
+          <a class="btn btn-secondary" href="#2a" style="font-size:13px">로그인</a>
+          <a class="btn btn-primary" href="#2a" style="font-size:13px">무료로 시작</a>
+        </div>
+        <div style="position:absolute;left:56px;bottom:60px;right:56px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;pointer-events:none">
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">TVC preset · Shorts preset</span>
+            <h1 style="margin:0;font-size:68px;line-height:1.02;letter-spacing:-0.03em;font-weight:500">촬영 없이,<br>광고가 됩니다.</h1>
+            <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0;font-size:16px;color:var(--color-neutral-300)">Ad-film texture, straight out of a preset.</p>
+            </sc-if>
+            <p style="margin:0;font-size:17px;line-height:1.6;color:var(--color-neutral-300);max-width:38ch">업종만 고르면 연출·카메라·조명·컷·자막이 이미 짜여 있습니다. 제품 사진 한 장과 한 줄이면 됩니다.</p>
+          </div>
+          <div style="display:flex;gap:12px;pointer-events:auto">
+            <a class="btn btn-primary" href="#2a" style="padding:14px 26px;font-size:15px">프리셋 둘러보기 →</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px;padding:56px 0 8px">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:0 56px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">Preset rails</span>
+            <h2 style="margin:0;font-size:32px;letter-spacing:-0.02em;font-weight:500">업종을 고르면 연출이 정해집니다</h2>
+            <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0;font-size:14px;color:var(--color-neutral-500)">Pick your business — the direction is already written.</p>
+            </sc-if>
+          </div>
+          <a class="btn btn-ghost" href="#2a" style="font-size:14px">전체 128종 →</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;padding:0 56px">
+          <sc-for list="{{ railChips }}" as="c" hint-placeholder-count="7">
+            <button type="button" style="{{ c.style }}" onClick="{{ c.onClick }}">{{ c.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;padding:32px 0 8px">
+        <div style="display:flex;align-items:baseline;gap:14px;padding:0 56px">
+          <h3 style="margin:0;font-size:20px;font-weight:500;letter-spacing:-0.01em">TVC 프리셋</h3>
+          <span style="font-size:12px;font-family:ui-monospace,Menlo,monospace;color:var(--color-neutral-500)">16:9 · 15–20초</span>
+        </div>
+        <div style="display:flex;gap:18px;overflow-x:auto;padding:6px 56px 22px">
+          <sc-for list="{{ railTvc }}" as="p" hint-placeholder-count="5">
+            <div style="flex:none;width:340px;display:flex;flex-direction:column;gap:11px;cursor:pointer" onMouseEnter="{{ p.onEnter }}" onMouseLeave="{{ p.onLeave }}">
+              <div style="position:relative;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;background:repeating-linear-gradient(135deg,var(--color-neutral-900) 0 7px,var(--color-surface) 7px 14px);box-shadow:var(--shadow-sm)">
+                <span style="position:absolute;left:11px;bottom:10px;font-family:ui-monospace,Menlo,monospace;font-size:10px;color:var(--color-neutral-500)">{{ p.slot }}</span>
+                <div style="{{ p.overlay }}">
+                  <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent)">Preview</span>
+                  <span style="font-size:13px;line-height:1.5;color:var(--color-neutral-200);max-width:26ch">{{ p.shots }}</span>
+                  <span class="btn btn-primary" style="font-size:12px;padding:7px 14px;align-self:flex-start">이 프리셋으로 만들기</span>
+                </div>
+              </div>
+              <span style="font-size:16px;font-weight:500;letter-spacing:-0.01em">{{ p.ko }}</span>
+              <span style="font-size:12px;color:var(--color-neutral-500)">{{ p.ind }} · {{ p.dur }} · {{ p.cuts }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;align-items:baseline;gap:14px;padding:20px 56px 0">
+          <h3 style="margin:0;font-size:20px;font-weight:500;letter-spacing:-0.01em">쇼츠 프리셋</h3>
+          <span style="font-size:12px;font-family:ui-monospace,Menlo,monospace;color:var(--color-neutral-500)">9:16 · 9–12초</span>
+        </div>
+        <div style="display:flex;gap:18px;overflow-x:auto;padding:6px 56px 24px">
+          <sc-for list="{{ railShorts }}" as="p" hint-placeholder-count="6">
+            <div style="flex:none;width:196px;display:flex;flex-direction:column;gap:11px;cursor:pointer" onMouseEnter="{{ p.onEnter }}" onMouseLeave="{{ p.onLeave }}">
+              <div style="position:relative;aspect-ratio:9/16;border-radius:var(--radius-md);overflow:hidden;background:repeating-linear-gradient(135deg,var(--color-neutral-900) 0 7px,var(--color-surface) 7px 14px);box-shadow:var(--shadow-sm)">
+                <span style="position:absolute;left:11px;bottom:10px;font-family:ui-monospace,Menlo,monospace;font-size:10px;color:var(--color-neutral-500)">{{ p.slot }}</span>
+                <div style="{{ p.overlay }}">
+                  <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent)">Preview</span>
+                  <span style="font-size:13px;line-height:1.5;color:var(--color-neutral-200)">{{ p.shots }}</span>
+                </div>
+              </div>
+              <span style="font-size:15px;font-weight:500;letter-spacing:-0.01em">{{ p.ko }}</span>
+              <span style="font-size:12px;color:var(--color-neutral-500)">{{ p.ind }} · {{ p.dur }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);margin:24px 56px">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:10px;padding:36px 28px 40px 0">
+            <span style="font-size:13px;font-family:ui-monospace,Menlo,monospace;color:var(--color-accent)">{{ s.no }}</span>
+            <span style="font-size:20px;font-weight:500;letter-spacing:-0.01em">{{ s.ko }}</span>
+            <span style="font-size:14px;line-height:1.6;color:var(--color-neutral-400)">{{ s.body }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:24px;padding:56px 56px 64px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">In the wild</span>
+          <h2 style="margin:0;font-size:32px;letter-spacing:-0.02em;font-weight:500">이렇게 쓰고 있습니다</h2>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ cases }}" as="k" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:200px 1fr 200px;gap:28px;align-items:center;padding:22px 0;border-top:1px solid var(--color-divider)">
+              <div style="aspect-ratio:16/10;border-radius:var(--radius-md);background:repeating-linear-gradient(135deg,var(--color-neutral-900) 0 7px,var(--color-surface) 7px 14px);position:relative">
+                <span style="position:absolute;left:10px;bottom:8px;font-family:ui-monospace,Menlo,monospace;font-size:10px;color:var(--color-neutral-500)">{{ k.slot }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <span class="card-kicker">{{ k.ind }}</span>
+                <span style="font-size:19px;font-weight:500;letter-spacing:-0.01em">{{ k.title }}</span>
+                <span style="font-size:14px;line-height:1.6;color:var(--color-neutral-400);max-width:56ch">{{ k.body }}</span>
+              </div>
+              <span style="font-size:13px;color:var(--color-accent-300);text-align:right">{{ k.metric }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:24px;padding:56px 56px 64px;background:var(--color-surface)">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">Pricing</span>
+            <h2 style="margin:0;font-size:32px;letter-spacing:-0.02em;font-weight:500">쓰는 만큼만</h2>
+          </div>
+          <span class="tag tag-neutral">금액은 가안</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+          <sc-for list="{{ plans }}" as="pl" hint-placeholder-count="3">
+            <div style="{{ pl.style }}">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <span class="card-kicker">{{ pl.name }}</span>
+                <span style="font-size:30px;font-weight:500;letter-spacing:-0.02em">{{ pl.price }}</span>
+                <span style="font-size:12px;color:var(--color-neutral-500)">{{ pl.note }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px;padding-top:8px">
+                <sc-for list="{{ pl.lines }}" as="l" hint-placeholder-count="3">
+                  <span style="font-size:13px;line-height:1.5;color:var(--color-neutral-300)">{{ l }}</span>
+                </sc-for>
+              </div>
+              <a class="btn btn-primary btn-block" href="#2a" style="font-size:14px;padding:11px 0;margin-top:16px">{{ pl.cta }}</a>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:0.7fr 1.3fr;gap:48px;padding:56px 56px 64px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">FAQ</span>
+          <h2 style="margin:0;font-size:32px;letter-spacing:-0.02em;font-weight:500">자주 묻는 질문</h2>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="5">
+            <div style="border-top:1px solid var(--color-divider)">
+              <button type="button" style="display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:20px 0;background:transparent;border:0;color:var(--color-text);font:inherit;font-size:16px;text-align:left;cursor:pointer" onClick="{{ q.onClick }}">
+                <span>{{ q.q }}</span>
+                <span style="font-family:ui-monospace,Menlo,monospace;font-size:14px;color:var(--color-accent)">{{ q.sign }}</span>
+              </button>
+              <div style="{{ q.bodyStyle }}">{{ q.a }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;padding:72px 56px 88px;border-top:1px solid var(--color-divider)">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <h2 style="margin:0;font-size:44px;letter-spacing:-0.03em;font-weight:500;line-height:1.06">첫 광고는 무료로.</h2>
+          <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;font-size:14px;color:var(--color-neutral-500)">Free to start. No card, no crew.</p>
+          </sc-if>
+        </div>
+        <div style="display:flex;gap:12px">
+          <a class="btn btn-primary" href="#2a" style="padding:14px 26px;font-size:15px">무료로 시작하기</a>
+          <a class="btn btn-secondary" href="#2a" style="padding:14px 26px;font-size:15px">상담 요청</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column;gap:28px;padding:40px 48px 96px">
+  <div style="display:flex;align-items:baseline;gap:16px">
+    <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">Turn 1</span>
+    <span style="font-size:14px;color:var(--color-neutral-400)">홈페이지 1차 안 — 구조가 다른 두 갈래. <a href="#1a">1a</a> 갤러리 우선 · <a href="#1b">1b</a> 쇼케이스 우선</span>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start">
+
+    <div id="1a" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="display:inline-flex;align-items:center;padding:3px 10px;border-radius:var(--radius-sm);border:1px solid var(--color-accent);color:var(--color-accent);font-size:11px;letter-spacing:.12em">1A</span>
+        <span style="font-size:13px;color:var(--color-neutral-400)">갤러리 우선 — 업종 필터가 첫 화면에서 바로 작동</span>
+      </div>
+
+      <div style="width:1240px;background:var(--color-bg);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)">
+
+        <div class="nav" style="padding:20px 56px">
+          <span class="nav-brand" style="letter-spacing:-0.01em">{{ brandName }}</span>
+          <a href="#1a">프리셋</a>
+          <a href="#1a">사용법</a>
+          <a href="#1a">업종별 사례</a>
+          <a class="btn btn-secondary" href="#1a" style="font-size:13px">로그인</a>
+          <a class="btn btn-primary" href="#1a" style="font-size:13px">무료로 시작</a>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center;padding:64px 56px 72px">
+          <div style="display:flex;flex-direction:column;gap:24px">
+            <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">TVC PRESET · SHORTS PRESET</span>
+            <h1 style="margin:0;font-size:58px;line-height:1.06;letter-spacing:-0.025em;font-weight:500;text-wrap:pretty">촬영 없이,<br>광고 같은 질감으로.</h1>
+            <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0;font-size:17px;line-height:1.5;color:var(--color-neutral-400);max-width:30ch">Broadcast-grade ad film, from a preset. No camera, no crew, no editor.</p>
+            </sc-if>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:var(--color-neutral-300);max-width:34ch">업종을 고르면 연출·카메라·조명·컷 편집이 이미 짜여 있습니다. 사장님은 제품 사진과 한 줄만 넣으면 됩니다.</p>
+            <div style="display:flex;gap:12px;padding-top:4px">
+              <a class="btn btn-primary" href="#1a" style="padding:12px 22px;font-size:15px">프리셋 둘러보기 →</a>
+              <a class="btn btn-secondary" href="#1a" style="padding:12px 22px;font-size:15px">30초 데모 보기</a>
+            </div>
+            <div style="display:flex;gap:28px;padding-top:12px;font-size:13px;color:var(--color-neutral-500)">
+              <span>프리셋 <span style="color:var(--color-text)">128</span>종</span>
+              <span>평균 제작 <span style="color:var(--color-text)">7분</span></span>
+              <span>업종 <span style="color:var(--color-text)">12</span>개</span>
+            </div>
+          </div>
+          <div style="position:relative;aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)">
+            <image-slot id="nvp-1a-hero" shape="rect" placeholder="히어로 영상 스틸 (어두운 배경 권장)"></image-slot>
+          </div>
+        </div>
+
+        <div style="padding:8px 56px 0">
+          <div style="height:1px;background:linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent)"></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:24px;padding:56px 56px 72px">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px">
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">Preset gallery</span>
+              <h2 style="margin:0;font-size:34px;letter-spacing:-0.02em;font-weight:500">업종으로 고르는 프리셋</h2>
+              <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}">
+                <p style="margin:0;font-size:14px;color:var(--color-neutral-500)">Pick your business. The direction is already written.</p>
+              </sc-if>
+            </div>
+            <a class="btn btn-ghost" href="#1a" style="font-size:14px">전체 128종 보기 →</a>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ chips }}" as="c" hint-placeholder-count="7">
+              <button type="button" style="{{ c.style }}" onClick="{{ c.onClick }}">{{ c.label }}</button>
+            </sc-for>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:8px">
+            <sc-for list="{{ filtered }}" as="p" hint-placeholder-count="8">
+              <div style="display:flex;flex-direction:column;gap:10px;cursor:pointer" style-hover="transform:translateY(-2px)">
+                <div style="position:relative;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;background:repeating-linear-gradient(135deg,var(--color-neutral-900) 0 7px,var(--color-surface) 7px 14px);box-shadow:var(--shadow-sm)">
+                  <span class="tag tag-outline" style="position:absolute;top:9px;left:9px;background:var(--color-bg)">{{ p.fmt }}</span>
+                  <span style="position:absolute;left:10px;bottom:9px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.05em;color:var(--color-neutral-500)">{{ p.slot }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:4px">
+                  <span style="font-size:15px;font-weight:500;letter-spacing:-0.01em">{{ p.ko }}</span>
+                  <span style="font-size:12px;color:var(--color-neutral-500)">{{ p.en }}</span>
+                </div>
+                <div style="display:flex;gap:10px;font-size:11px;color:var(--color-neutral-600)">
+                  <span>{{ p.ind }}</span>
+                  <span>·</span>
+                  <span>{{ p.dur }}</span>
+                  <span>·</span>
+                  <span>{{ p.cuts }}</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:48px;padding:64px 56px;background:var(--color-surface)">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">How it works</span>
+            <h2 style="margin:0;font-size:34px;letter-spacing:-0.02em;font-weight:500">세 단계면 끝납니다</h2>
+            <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0;font-size:14px;color:var(--color-neutral-400)">Three steps. Seven minutes.</p>
+            </sc-if>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--color-divider)">
+                <span style="font-size:13px;font-family:ui-monospace,Menlo,monospace;color:var(--color-accent)">{{ s.no }}</span>
+                <div style="display:flex;flex-direction:column;gap:6px">
+                  <span style="font-size:20px;font-weight:500;letter-spacing:-0.01em">{{ s.ko }}</span>
+                  <span style="font-size:14px;line-height:1.6;color:var(--color-neutral-400);max-width:52ch">{{ s.body }}</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:28px;padding:64px 56px 72px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">In the wild</span>
+            <h2 style="margin:0;font-size:34px;letter-spacing:-0.02em;font-weight:500">업종별 사례</h2>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+            <sc-for list="{{ cases }}" as="k" hint-placeholder-count="3">
+              <div class="card elev-sm" style="padding:0;overflow:hidden;background:var(--color-surface)">
+                <div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,var(--color-neutral-900) 0 7px,var(--color-surface) 7px 14px);position:relative">
+                  <span style="position:absolute;left:12px;bottom:10px;font-family:ui-monospace,Menlo,monospace;font-size:10px;color:var(--color-neutral-500)">{{ k.slot }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px;padding:20px 20px 24px">
+                  <span class="card-kicker">{{ k.ind }}</span>
+                  <span style="font-size:18px;font-weight:500;letter-spacing:-0.01em">{{ k.title }}</span>
+                  <span style="font-size:13px;line-height:1.6;color:var(--color-neutral-400)">{{ k.body }}</span>
+                  <span style="font-size:12px;color:var(--color-accent-300);padding-top:4px">{{ k.metric }}</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;padding:72px 56px 88px;border-top:1px solid var(--color-divider)">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <h2 style="margin:0;font-size:40px;letter-spacing:-0.025em;font-weight:500;line-height:1.1">오늘 저녁 광고,<br>지금 만들어 두세요.</h2>
+            <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}">
+              <p style="margin:0;font-size:14px;color:var(--color-neutral-500)">Free to start. No card, no crew.</p>
+            </sc-if>
+          </div>
+          <div style="display:flex;gap:12px">
+            <a class="btn btn-primary" href="#1a" style="padding:14px 26px;font-size:15px">무료로 시작하기</a>
+            <a class="btn btn-secondary" href="#1a" style="padding:14px 26px;font-size:15px">상담 요청</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="1b" style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="display:inline-flex;align-items:center;padding:3px 10px;border-radius:var(--radius-sm);border:1px solid var(--color-accent);color:var(--color-accent);font-size:11px;letter-spacing:.12em">1B</span>
+        <span style="font-size:13px;color:var(--color-neutral-400)">쇼케이스 우선 — 전면 영상 + 포맷별 가로 레일</span>
+      </div>
+
+      <div style="width:1240px;background:var(--color-bg);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)">
+
+        <div style="position:relative;height:640px">
+          <div style="position:absolute;inset:0">
+            <image-slot id="nvp-1b-hero" shape="rect" placeholder="전면 히어로 영상 스틸 (검정 배경 소재 권장)"></image-slot>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,var(--color-bg) 0%,color-mix(in srgb,var(--color-bg) 55%,transparent) 45%,transparent 85%);pointer-events:none"></div>
+          <div class="nav" style="position:relative;padding:20px 56px;color:var(--color-text)">
+            <span class="nav-brand" style="letter-spacing:-0.01em">{{ brandName }}</span>
+            <a href="#1b">TVC</a>
+            <a href="#1b">쇼츠</a>
+            <a href="#1b">사례</a>
+            <a class="btn btn-primary" href="#1b" style="font-size:13px">무료로 시작</a>
+          </div>
+          <div style="position:absolute;left:56px;bottom:56px;right:56px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;pointer-events:none">
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">128 presets · TVC &amp; Shorts</span>
+              <h1 style="margin:0;font-size:66px;line-height:1.03;letter-spacing:-0.03em;font-weight:500">프리셋 하나로<br>광고가 됩니다.</h1>
+              <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}">
+                <p style="margin:0;font-size:16px;color:var(--color-neutral-300)">One preset. A film that looks like it cost ten million won.</p>
+              </sc-if>
+            </div>
+            <div style="display:flex;gap:12px;pointer-events:auto">
+              <a class="btn btn-primary" href="#1b" style="padding:14px 26px;font-size:15px">프리셋 둘러보기 →</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:22px;padding:64px 0 24px">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:0 56px">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">TVC preset · 16:9</span>
+              <h2 style="margin:0;font-size:30px;letter-spacing:-0.02em;font-weight:500">TV 광고 질감 그대로</h2>
+            </div>
+            <a class="btn btn-ghost" href="#1b" style="font-size:14px">64종 전체 →</a>
+          </div>
+          <div style="display:flex;gap:18px;overflow-x:auto;padding:4px 56px 20px">
+            <sc-for list="{{ tvc }}" as="p" hint-placeholder-count="6">
+              <div style="flex:none;width:320px;display:flex;flex-direction:column;gap:10px;cursor:pointer" style-hover="transform:translateY(-2px)">
+                <div style="position:relative;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;background:repeating-linear-gradient(135deg,var(--color-neutral-900) 0 7px,var(--color-surface) 7px 14px);box-shadow:var(--shadow-sm)">
+                  <span style="position:absolute;left:10px;bottom:9px;font-family:ui-monospace,Menlo,monospace;font-size:10px;color:var(--color-neutral-500)">{{ p.slot }}</span>
+                </div>
+                <span style="font-size:15px;font-weight:500;letter-spacing:-0.01em">{{ p.ko }}</span>
+                <span style="font-size:12px;color:var(--color-neutral-500)">{{ p.ind }} · {{ p.dur }} · {{ p.cuts }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:28px 56px 0">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">Shorts preset · 9:16</span>
+              <h2 style="margin:0;font-size:30px;letter-spacing:-0.02em;font-weight:500">릴스·쇼츠는 더 쉽게</h2>
+            </div>
+            <a class="btn btn-ghost" href="#1b" style="font-size:14px">64종 전체 →</a>
+          </div>
+          <div style="display:flex;gap:18px;overflow-x:auto;padding:4px 56px 20px">
+            <sc-for list="{{ shorts }}" as="p" hint-placeholder-count="6">
+              <div style="flex:none;width:190px;display:flex;flex-direction:column;gap:10px;cursor:pointer" style-hover="transform:translateY(-2px)">
+                <div style="position:relative;aspect-ratio:9/16;border-radius:var(--radius-md);overflow:hidden;background:repeating-linear-gradient(135deg,var(--color-neutral-900) 0 7px,var(--color-surface) 7px 14px);box-shadow:var(--shadow-sm)">
+                  <span style="position:absolute;left:10px;bottom:9px;font-family:ui-monospace,Menlo,monospace;font-size:10px;color:var(--color-neutral-500)">{{ p.slot }}</span>
+                </div>
+                <span style="font-size:15px;font-weight:500;letter-spacing:-0.01em">{{ p.ko }}</span>
+                <span style="font-size:12px;color:var(--color-neutral-500)">{{ p.ind }} · {{ p.dur }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);margin:32px 56px">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:10px;padding:36px 28px 40px 0">
+              <span style="font-size:13px;font-family:ui-monospace,Menlo,monospace;color:var(--color-accent)">{{ s.no }}</span>
+              <span style="font-size:20px;font-weight:500;letter-spacing:-0.01em">{{ s.ko }}</span>
+              <span style="font-size:14px;line-height:1.6;color:var(--color-neutral-400)">{{ s.body }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:26px;padding:56px 56px 72px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-accent)">In the wild</span>
+            <h2 style="margin:0;font-size:30px;letter-spacing:-0.02em;font-weight:500">이렇게 쓰고 있습니다</h2>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <sc-for list="{{ cases }}" as="k" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:200px 1fr 200px;gap:28px;align-items:center;padding:22px 0;border-top:1px solid var(--color-divider)">
+                <div style="aspect-ratio:16/10;border-radius:var(--radius-md);background:repeating-linear-gradient(135deg,var(--color-neutral-900) 0 7px,var(--color-surface) 7px 14px);position:relative">
+                  <span style="position:absolute;left:10px;bottom:8px;font-family:ui-monospace,Menlo,monospace;font-size:10px;color:var(--color-neutral-500)">{{ k.slot }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:6px">
+                  <span class="card-kicker">{{ k.ind }}</span>
+                  <span style="font-size:19px;font-weight:500;letter-spacing:-0.01em">{{ k.title }}</span>
+                  <span style="font-size:14px;line-height:1.6;color:var(--color-neutral-400);max-width:56ch">{{ k.body }}</span>
+                </div>
+                <span style="font-size:13px;color:var(--color-accent-300);text-align:right">{{ k.metric }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;padding:72px 56px 88px;border-top:1px solid var(--color-divider)">
+          <h2 style="margin:0;font-size:44px;letter-spacing:-0.03em;font-weight:500;line-height:1.08">첫 광고는 무료로.</h2>
+          <div style="display:flex;gap:12px">
+            <a class="btn btn-primary" href="#1b" style="padding:14px 26px;font-size:15px">무료로 시작하기</a>
+            <a class="btn btn-secondary" href="#1b" style="padding:14px 26px;font-size:15px">상담 요청</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;PRESET STUDIO&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showEnglish&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;카피&quot;},&quot;defaultIndustry&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;전체&quot;,&quot;음식·카페&quot;,&quot;뷰티&quot;,&quot;패션&quot;,&quot;리빙&quot;,&quot;헬스&quot;,&quot;교육&quot;],&quot;default&quot;:&quot;전체&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;갤러리&quot;}}">
+const PRESETS = [
+  { ko: "카페 시그니처 드링크", en: "Signature drink pour", ind: "음식·카페", fmt: "TVC 16:9", dur: "15초", cuts: "6컷", slot: "[ preset still — pour macro ]" },
+  { ko: "웜 브런치 플레이팅", en: "Warm brunch plating", ind: "음식·카페", fmt: "쇼츠 9:16", dur: "9초", cuts: "4컷", slot: "[ preset still — plating ]" },
+  { ko: "야간 포차 무드", en: "Late-night pocha mood", ind: "음식·카페", fmt: "TVC 16:9", dur: "20초", cuts: "8컷", slot: "[ preset still — neon night ]" },
+  { ko: "글로우 스킨 클로즈업", en: "Glow skin close-up", ind: "뷰티", fmt: "TVC 16:9", dur: "15초", cuts: "5컷", slot: "[ preset still — skin macro ]" },
+  { ko: "세럼 텍스처 슬로우", en: "Serum texture slow-mo", ind: "뷰티", fmt: "쇼츠 9:16", dur: "9초", cuts: "3컷", slot: "[ preset still — texture ]" },
+  { ko: "룩북 워크 360", en: "Lookbook walk 360", ind: "패션", fmt: "TVC 16:9", dur: "20초", cuts: "7컷", slot: "[ preset still — runway walk ]" },
+  { ko: "데일리 코디 스와이프", en: "Daily outfit swipe", ind: "패션", fmt: "쇼츠 9:16", dur: "12초", cuts: "6컷", slot: "[ preset still — outfit swipe ]" },
+  { ko: "린넨 소재 정물", en: "Linen still life", ind: "리빙", fmt: "TVC 16:9", dur: "15초", cuts: "5컷", slot: "[ preset still — fabric ]" },
+  { ko: "홈카페 아침 햇살", en: "Morning light at home", ind: "리빙", fmt: "쇼츠 9:16", dur: "9초", cuts: "4컷", slot: "[ preset still — window light ]" },
+  { ko: "PT 첫 세션 컷", en: "First PT session", ind: "헬스", fmt: "TVC 16:9", dur: "20초", cuts: "8컷", slot: "[ preset still — gym rig ]" },
+  { ko: "3개월 변화 비포애프터", en: "12-week transformation", ind: "헬스", fmt: "쇼츠 9:16", dur: "12초", cuts: "5컷", slot: "[ preset still — before/after ]" },
+  { ko: "원데이 클래스 초대", en: "One-day class invite", ind: "교육", fmt: "쇼츠 9:16", dur: "12초", cuts: "5컷", slot: "[ preset still — studio desk ]" },
+];
+
+const INDUSTRIES = ["전체", "음식·카페", "뷰티", "패션", "리빙", "헬스", "교육"];
+
+const CHIP_BASE = "display:inline-flex;align-items:center;padding:7px 15px;border-radius:999px;font:inherit;font-size:13px;cursor:pointer;transition:color .12s,border-color .12s,background .12s;";
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const d = props && props.defaultIndustry;
+    this.state = { filter: INDUSTRIES.includes(d) ? d : "전체" };
+  }
+
+  renderVals() {
+    const filter = this.state.filter;
+    const chips = INDUSTRIES.map((label) => ({
+      label,
+      style: CHIP_BASE + (label === filter
+        ? "color:var(--color-accent);border:1px solid var(--color-accent);background:color-mix(in srgb, var(--color-accent) 14%, transparent);"
+        : "color:var(--color-neutral-400);border:1px solid var(--color-divider);background:transparent;"),
+      onClick: () => this.setState({ filter: label }),
+    }));
+
+    const filtered = (filter === "전체" ? PRESETS : PRESETS.filter((p) => p.ind === filter)).slice(0, 8);
+
+    return {
+      brandName: this.props.brandName ?? "PRESET STUDIO",
+      ...this.turn2(),
+      showEnglish: this.props.showEnglish ?? true,
+      chips,
+      filtered,
+      tvc: PRESETS.filter((p) => p.fmt.startsWith("TVC")),
+      shorts: PRESETS.filter((p) => p.fmt.startsWith("쇼츠")),
+      steps: [
+        { no: "01", ko: "업종과 프리셋 고르기", body: "카페·뷰티·패션·리빙 등 업종을 고르면 그 업종에서 잘 팔린 연출만 남습니다." },
+        { no: "02", ko: "사진과 한 줄 넣기", body: "제품 사진 한 장, 매장 이름, 하고 싶은 말 한 줄. 나레이션과 자막은 자동으로 붙습니다." },
+        { no: "03", ko: "받아서 바로 올리기", body: "16:9와 9:16을 함께 내보냅니다. 인스타·유튜브·네이버 규격에 맞춰 바로 업로드." },
+      ],
+      cases: [
+        { ind: "카페 · 성수", title: "오픈 3주차 매장의 첫 광고", body: "메뉴 사진 4장으로 15초 TVC와 9초 쇼츠를 함께 만들어 로컬 타겟 광고에 사용했습니다.", metric: "제작 시간 7분", slot: "[ case still — cafe ]" },
+        { ind: "뷰티 · 자사몰", title: "신제품 세럼 런칭 소재", body: "같은 프리셋으로 톤만 바꿔 소재 6종을 만들고 A/B 테스트에 그대로 투입했습니다.", metric: "소재 6종 / 하루", slot: "[ case still — serum ]" },
+        { ind: "패션 · 스마트스토어", title: "주 2회 신상 업로드", body: "촬영 없이 상품컷만으로 코디 쇼츠를 매주 올리는 루틴을 만들었습니다.", metric: "촬영비 0원", slot: "[ case still — lookbook ]" },
+      ],
+    };
+  }
+
+  turn2() {
+    const ind = this.state.railInd || "전체";
+    const railChips = INDUSTRIES.map((label) => ({
+      label,
+      style: CHIP_BASE + (label === ind
+        ? "color:var(--color-accent);border:1px solid var(--color-accent);background:color-mix(in srgb, var(--color-accent) 14%, transparent);"
+        : "color:var(--color-neutral-400);border:1px solid var(--color-divider);background:transparent;"),
+      onClick: () => this.setState({ railInd: label }),
+    }));
+
+    const OVERLAY = "position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:9px;padding:18px;background:linear-gradient(to top,var(--color-bg) 0%,color-mix(in srgb,var(--color-bg) 72%,transparent) 60%,transparent 100%);transition:opacity .16s;";
+    const decorate = (p) => ({
+      ...p,
+      shots: p.fmt.startsWith("TVC")
+        ? p.cuts + " · 무드 인트로 → 제품 클로즈업 → 사용 장면 → 로고 아웃"
+        : p.cuts + " · 훅 3초 → 제품 → 자막 CTA",
+      overlay: OVERLAY + (this.state.hover === p.ko ? "opacity:1;" : "opacity:0;pointer-events:none;"),
+      onEnter: () => this.setState({ hover: p.ko }),
+      onLeave: () => this.setState({ hover: null }),
+    });
+
+    const pool = ind === "전체" ? PRESETS : PRESETS.filter((p) => p.ind === ind);
+    const PLAN_BASE = "display:flex;flex-direction:column;padding:24px;border-radius:var(--radius-md);background:var(--color-bg);";
+
+    return {
+      railChips,
+      railTvc: pool.filter((p) => p.fmt.startsWith("TVC")).map(decorate),
+      railShorts: pool.filter((p) => p.fmt.startsWith("쇼츠")).map(decorate),
+      facts: [
+        { n: "128종", label: "프리셋 / Presets" },
+        { n: "7분", label: "평균 제작 시간 / Avg. turnaround" },
+        { n: "12개", label: "업종 / Industries" },
+        { n: "16:9 + 9:16", label: "동시 내보내기 / Dual export" },
+      ],
+      plans: [
+        { name: "무료 체험", price: "₩0", note: "카드 등록 없이", lines: ["프리셋 3종", "720p · 워터마크", "월 3편"], cta: "무료로 시작", style: PLAN_BASE + "box-shadow:var(--shadow-sm);" },
+        { name: "사장님", price: "₩29,000", note: "월 / 부가세 별도", lines: ["프리셋 전체 128종", "1080p · 워터마크 없음", "월 20편 · 16:9 + 9:16"], cta: "14일 체험", style: PLAN_BASE + "box-shadow:var(--shadow-md);" },
+        { name: "브랜드", price: "문의", note: "연 단위 계약", lines: ["브랜드 전용 프리셋 제작", "4K · 팀 계정", "제작 담당자 배정"], cta: "상담 요청", style: PLAN_BASE + "box-shadow:var(--shadow-sm);" },
+      ],
+      faqs: [
+        { q: "영상 편집을 한 번도 해본 적 없어도 되나요?", a: "네. 고르는 것 말고는 할 일이 없습니다. 업종과 프리셋을 고르고 사진과 문구를 넣으면 컷·자막·나레이션까지 자동으로 붙습니다." },
+        { q: "제품 사진이 몇 장 필요한가요?", a: "한 장으로도 됩니다. 3~4장이면 컷이 더 다양해집니다. 매장 사진이나 메뉴판 사진도 소재로 쓸 수 있습니다." },
+        { q: "만든 영상을 광고로 집행해도 되나요?", a: "상업적 사용이 포함됩니다. 인스타그램·유튜브·네이버·틱톡 규격으로 함께 내보냅니다." },
+        { q: "TVC 프리셋과 쇼츠 프리셋은 뭐가 다른가요?", a: "TVC는 16:9, 15~20초로 브랜드 톤을 잡는 연출입니다. 쇼츠는 9:16, 9~12초로 첫 3초에 훅을 넣는 구성입니다. 같은 소재로 둘 다 만들 수 있습니다." },
+        { q: "결과물이 마음에 들지 않으면요?", a: "같은 프리셋으로 톤·자막·음악만 바꿔 다시 생성할 수 있습니다. 무료 체험에서 먼저 확인해 보세요." },
+      ].map((f, i) => ({
+        ...f,
+        sign: this.state.faq === i ? "−" : "+",
+        onClick: () => this.setState({ faq: this.state.faq === i ? null : i }),
+        bodyStyle: this.state.faq === i
+          ? "font-size:14px;line-height:1.7;color:var(--color-neutral-400);max-width:64ch;padding:0 0 22px;"
+          : "display:none;",
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

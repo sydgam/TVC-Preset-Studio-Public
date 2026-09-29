@@ -1,0 +1,4 @@
+V2
+
+Snapshot date: 2026-09-15
+This directory is the preserved V2 baseline. Develop V3 in the project root.
